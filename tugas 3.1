@@ -1,0 +1,26 @@
+int ledPin = 18;  // pin LED (bisa diganti sesuai pin yang dipakai)
+
+void setup() {
+  pinMode(ledPin, OUTPUT);   // set pin LED sebagai output
+  Serial.begin(9600);        // mulai komunikasi serial dengan baud rate 9600
+}
+
+void loop() {
+  // Nyalakan LED selama 5 detik
+  digitalWrite(ledPin, HIGH);
+  Serial.println("LED ON");
+  for (int i = 1; i <= 10; i++) {
+    Serial.println(i);      // tampilkan angka 1 sampai 10
+    delay(500);             // jeda 0.5 detik antar angka
+  }
+  delay(5000);              // tunggu total 5 detik (LED tetap nyala)
+
+  // Matikan LED selama 5 detik
+  digitalWrite(ledPin, LOW);
+  Serial.println("LED OFF");
+  for (int i = 1; i <= 10; i++) {
+    Serial.println(i);      // tampilkan angka 1 sampai 10 lagi
+    delay(500);             // jeda 0.5 detik antar angka
+  }
+  delay(5000);              // tunggu total 5 detik (LED mati)
+}
