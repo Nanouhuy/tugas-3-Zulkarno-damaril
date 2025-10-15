@@ -1,0 +1,16 @@
+// Program: LED hidup 5 detik, mati 5 detik
+// Board: ESP32
+
+#define LED_PIN 18  // Ganti dengan pin tempat LED terhubung (misal GPIO2)
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);  // Atur pin LED sebagai output
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH);  // Nyalakan LED
+  delay(5000);                  // Tunggu 5 detik (5000 milidetik)
+  
+  digitalWrite(LED_PIN, LOW);   // Matikan LED
+  delay(5000);                  // Tunggu 5 detik
+}
